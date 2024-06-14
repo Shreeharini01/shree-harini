@@ -1,0 +1,15 @@
+import sys
+
+def get_age_message():
+    input_data = sys.stdin.read().strip()
+    try:
+        age = int(input_data)
+        if age < 0:
+            print("Error: Please enter a valid age.")
+        else:
+            print(f"You are {age} years old.")
+    except ValueError:
+        print("Error: Please enter a valid age.")
+
+# Call the function
+get_age_message()
