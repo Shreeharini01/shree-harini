@@ -1,0 +1,16 @@
+def eliminate_common_elements(arr1, arr2):
+    # Convert arrays to sets to eliminate duplicates
+    set1 = set(arr1)
+    set2 = set(arr2)
+    # Find non-repeating elements
+    non_repeating_elements = set1.symmetric_difference(set2)
+    for element in non_repeating_elements:
+        print(element, end=" ")
+    print()
+    # Print total number of non-repeating elements
+    print(len(non_repeating_elements))
+    # Input format: size of arrays, followed by the arrays
+size1, size2 = map(int, input().split())
+arr1 = list(map(int, input().split()))
+arr2 = list(map(int, input().split()))
+eliminate_common_elements(arr1, arr2)
