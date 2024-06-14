@@ -1,0 +1,30 @@
+def find_pairs_with_sum(numbers, target_sum):
+    
+    numbers_list = list(numbers)
+    
+    
+    pairs = set()
+    
+    
+    visited = set()
+    
+    for number in numbers_list:
+        complement = target_sum - number
+        if complement in visited:
+            
+            pair = tuple(sorted((number, complement)))
+            pairs.add(pair)
+        visited.add(number)
+    
+    return pairs
+
+
+numbers_input = input("")
+target_sum = int(input(""))
+
+
+numbers = tuple(map(int, numbers_input.split(',')))
+
+
+pairs = find_pairs_with_sum(numbers, target_sum)
+print(f"{len(pairs)}")
