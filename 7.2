@@ -1,0 +1,8 @@
+a=input()
+b=[]
+for i in range(0,len(a),10):
+    b.append(a[i:i+10])
+print(b[0])    
+for i in range(len(b)-1):
+    if(b[i]==b[i+1]):
+        print(b[i+1][::-1])
