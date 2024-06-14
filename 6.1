@@ -1,0 +1,16 @@
+a=int(input())
+b=[]
+for i in range(a):
+    b.append(int(input()))
+c=int(input())    
+d=[]
+if b.count(c)>0:
+    for i in range(a):
+        if b[i]==c:
+            if i not in d:
+                d.append(i) 
+    for i in d:
+        print(c," is present at location ",i+1,".",sep="")
+    print(c,"is present",b.count(c), "times in the array.")  
+else:
+    print(c,"is not present in the array.")
