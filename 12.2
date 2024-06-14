@@ -1,0 +1,31 @@
+def manage_shoe_inventory():
+    # Get the total number of shoes in the shop
+    x = int(input())
+
+    # Get the list of shoe sizes in the shop
+    shoe_sizes = list(map(int, input().split()))
+
+    # Create a dictionary to store the inventory of each shoe size
+    inventory = {}
+    for size in shoe_sizes:
+        if size not in inventory:
+            inventory[size] = 0
+        inventory[size] += 1
+
+    # Get the number of customer requests
+    n = int(input())
+
+    # Initialize the total revenue
+    total_revenue = 0
+
+    # Process each customer request
+    for _ in range(n):
+        size, price = map(int, input().split())
+        if size in inventory and inventory[size] > 0:
+            # Sell the shoe and update the inventory
+            inventory[size] -= 1
+            total_revenue += price
+    # Print the total revenue
+    print(total_revenue)
+
+manage_shoe_inventory()        
