@@ -1,0 +1,35 @@
+def productDigits(number):
+    # Convert the number to a string to iterate through each digit
+    number_str = str(number)
+    
+    # Initialize the sum for odd places and product for even places
+    sum_odd_places = 0
+    product_even_places = 1
+    
+    # Iterate through the string and classify digits based on their positions
+    for i in range(len(number_str)):
+        digit = int(number_str[i])
+        # Positions are 1-based, so i+1 is used
+        if (i + 1) % 2 == 0:  # Even place
+            product_even_places *= digit
+        else:  # Odd place
+            sum_odd_places += digit
+    # Check if the product of even place digits is divisible by the sum of odd place digits
+    if sum_odd_places == 0:
+        return False  # Avoid division by zero
+    
+    return product_even_places % sum_odd_places == 0
+
+# Get user input
+number = input()
+
+# Ensure the input is a valid positive integer
+if number.isdigit() and int(number) > 0:
+    # Get the result from the function
+    result = productDigits(number)
+    # Print the result
+    print("TRUE" if result else "FALSE")
+else:
+    print(end="")
+
+    
