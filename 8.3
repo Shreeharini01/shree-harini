@@ -1,0 +1,27 @@
+def process_and_sort_dict(n, inputs):
+    test_dict = {}
+    
+    for line in inputs:
+        parts = line.split()
+        key = parts[0]
+        values = list(map(int, parts[1:]))
+        test_dict[key] = values
+
+    # Sort dictionary by the sum of values
+    sorted_dict = {k: sum(v) for k, v in sorted(test_dict.items(), key=lambda item: sum(item[1]))}
+
+    return sorted_dict
+
+def main():
+    n = int(input())
+    inputs = []
+    for _ in range(n):
+        inputs.append(input())
+    
+    sorted_dict = process_and_sort_dict(n, inputs)
+    
+    for k, v in sorted_dict.items():
+        print(f"{k} {v}")
+
+if __name__ == "__main__":
+    main()
