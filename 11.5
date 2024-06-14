@@ -1,0 +1,18 @@
+def safe_divide(num1, num2):
+    try:
+        result = num1 / num2
+        return result
+    except ZeroDivisionError:
+        print("Error: Cannot divide or modulo by zero.")
+    except TypeError:
+        print("Error: Non-numeric input provided.")
+
+if __name__ == "__main__":
+    try:
+        num1 = float(input())
+        num2 = float(input())
+        division_result = safe_divide(num1, num2)
+        if division_result is not None:
+            print(division_result)
+    except ValueError:
+        print("Error: Non-numeric input provided.")
