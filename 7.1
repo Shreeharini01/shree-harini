@@ -1,0 +1,13 @@
+str1=input().split()
+str2=input()
+count=0
+for word in str1:
+    word=word.lower()
+    present=0
+    for i in str2:
+        if i in word:
+            present=1
+            break
+    if(present==0):
+        count+=1
+print(count)
