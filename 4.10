@@ -1,0 +1,7 @@
+def square(n):
+    if(n%4==0):
+        return "Yes"
+    else:
+        return "No"
+n=int(input())
+print(square(n))
