@@ -1,0 +1,5 @@
+n=eval(input())
+if(n==0):
+    print(chr(67))
+elif(n==1):
+    print(chr(68))
